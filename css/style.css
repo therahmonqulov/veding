@@ -69,7 +69,7 @@ main {
     color: #fff;
 }
 
-.u_name p{
+.u_name p {
     font-family: Montserrat;
     font-size: 18px !important;
 }
@@ -146,6 +146,7 @@ main {
     font-family: Montserrat;
     border-radius: 10px;
     padding: 25px 20px 15px 25px;
+    margin-bottom: 2.5rem;
     background: linear-gradient(90deg, #2C3E50, #9a9d9fc0);
 }
 
@@ -256,7 +257,7 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent, #06a0ffc7 85.14%);
+    background: linear-gradient(180deg, transparent, #126383cd 80%);
     z-index: 1;
 }
 
@@ -285,6 +286,9 @@ main {
 
 /* toy_box */
 .toy_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 2rem;
     margin-bottom: 15px;
 }
@@ -293,6 +297,16 @@ main {
     font-weight: 600;
     color: #fff;
     font-size: 23px;
+}
+
+.toy_title button {
+    cursor: pointer;
+    color: #fff;
+    background: none;
+    border: none;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .toy {
@@ -354,6 +368,9 @@ main {
 
 /* marosim_box */
 .marosim_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 2rem;
     margin-bottom: 15px;
 }
@@ -362,6 +379,16 @@ main {
     font-weight: 600;
     color: #fff;
     font-size: 23px;
+}
+
+.marosim_title button {
+    cursor: pointer;
+    color: #fff;
+    background: none;
+    border: none;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .marosim {
