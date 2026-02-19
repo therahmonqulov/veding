@@ -19,6 +19,16 @@ main {
     display: flex;
 }
 
+/* body */
+.body {
+    margin-top: 0.75rem;
+    margin-left: 18%;
+    width: 80%;
+    background-color: #232323;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
 /* menu */
 .menu {
     width: 18%;
@@ -26,6 +36,12 @@ main {
     justify-content: center;
     position: fixed;
     height: 98vh;
+}
+
+.logo {
+    padding: 35px 0px;
+    display: flex;
+    justify-content: center;
 }
 
 .menu-box {
@@ -42,36 +58,6 @@ main {
     font-size: 25px;
 }
 
-/* body */
-.body {
-    margin-left: 18%;
-    width: 80%;
-    background-color: #232323;
-    padding-top: 1.5rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-}
-
-/* header */
-.header {
-    margin-bottom: 1.5rem;
-}
-
-.logo {
-    padding: 35px 0px;
-    display: flex;
-    justify-content: center;
-}
-
-.header_text p {
-    font-family: Montserrat;
-    color: #fff;
-    line-height: 140%;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-/* menu */
 .menu-box_links ul {
     list-style: none;
 }
@@ -84,17 +70,18 @@ main {
 }
 
 .menu-box_links ul li:hover {
-    background-color: #ffffff13;
+    background-color: #ffffff05;
 }
 
 .menu-box_links ul li a {
+    outline: none;
     font-family: Montserrat;
     font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 12px;
+    padding: 15px 12px;
     font-size: 14px;
     letter-spacing: 1px;
     text-decoration: none;
@@ -105,8 +92,17 @@ main {
     width: 20px;
 }
 
+/* header */
+.header h1 {
+    color: white;
+    font-size: 41px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
 /* hero */
 .hero {
+    font-family: Montserrat;
     border-radius: 10px;
     padding: 25px 20px 15px 25px;
     background: linear-gradient(135deg, #1e3a8a, #065f46);
@@ -119,7 +115,8 @@ main {
 
 .hero h1 {
     color: white;
-    font-size: 42px;
+    font-size: 41px;
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
@@ -146,6 +143,16 @@ main {
 
 .search-box input::placeholder {
     color: rgba(255, 255, 255, 0.7);
+}
+
+.categories_title {
+    margin-bottom: 10px;
+}
+
+.categories_title p {
+    font-weight: 600;
+    color: #fff;
+    font-size: 23px;
 }
 
 .categories {
