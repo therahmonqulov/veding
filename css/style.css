@@ -8,6 +8,7 @@
 @font-face {
     font-family: Montserrat;
     src: url(../astess/font/Montserrat-Medium.ttf);
+    font-display: swap;
     font-weight: 400;
 }
 
