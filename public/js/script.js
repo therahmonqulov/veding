@@ -12,7 +12,7 @@ let currentText = "";
 let letter = "";
 const input = document.getElementById("searchInput");
 
-(function type() {
+function type() {
 
     if (count === texts.length) {
         count = 0;
@@ -24,14 +24,11 @@ const input = document.getElementById("searchInput");
     input.setAttribute("placeholder", letter);
 
     if (letter.length === currentText.length) {
-        setTimeout(() => {
-            erase();
-        }, 1500);
+        setTimeout(erase, 1500);
     } else {
         setTimeout(type, 80);
     }
-
-})();
+}
 
 function erase() {
     letter = currentText.slice(0, --index);
@@ -44,3 +41,5 @@ function erase() {
         setTimeout(erase, 50);
     }
 }
+
+type();
