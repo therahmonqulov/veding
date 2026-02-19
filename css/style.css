@@ -300,6 +300,9 @@ main {
 }
 
 .toy_title button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     cursor: pointer;
     color: #fff;
     background: none;
@@ -382,6 +385,9 @@ main {
 }
 
 .marosim_title button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     cursor: pointer;
     color: #fff;
     background: none;
