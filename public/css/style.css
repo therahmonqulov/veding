@@ -38,6 +38,43 @@ main {
     height: 98vh;
 }
 
+.menu_user {
+    padding: 15px 0px;
+    font-family: Montserrat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.u_avatar {
+    font-family: Montserrat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #fff;
+}
+
+.u_name p{
+    font-family: Montserrat;
+    font-size: 18px !important;
+}
+
 .logo {
     padding: 35px 0px;
     display: flex;
@@ -94,6 +131,7 @@ main {
 
 /* header */
 .header h1 {
+    font-family: Montserrat;
     color: white;
     font-size: 41px;
     margin-top: 1.5rem;
@@ -105,7 +143,7 @@ main {
     font-family: Montserrat;
     border-radius: 10px;
     padding: 25px 20px 15px 25px;
-    background: linear-gradient(135deg, #1e3a8a, #065f46);
+    background: linear-gradient(90deg, #2C3E50, #9a9d9fc0);
 }
 
 .hero-content {
@@ -146,7 +184,7 @@ main {
 }
 
 .categories_title {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .categories_title p {
@@ -186,7 +224,7 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent, #3875cf 85.14%);
+    background: linear-gradient(180deg, transparent, #06a0ffc7 85.14%);
     z-index: 1;
 }
 
