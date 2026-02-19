@@ -107,7 +107,8 @@ main {
 
 /* hero */
 .hero {
-    padding: 60px 40px;
+    border-radius: 10px;
+    padding: 25px 20px 15px 25px;
     background: linear-gradient(135deg, #1e3a8a, #065f46);
 }
 
@@ -164,13 +165,14 @@ main {
 }
 
 .categories_card {
-    min-width: 180px;
-    height: 220px;
+    border: 3px solid #fff;
+    width: 140px;
+    height: 190px;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.1s ease;
 }
 
 .categories_card::before {
