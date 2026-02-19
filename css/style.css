@@ -124,6 +124,10 @@ main {
     color: #fff;
 }
 
+.menu-box_links ul li:last-child {
+    border: none;
+}
+
 .menu-box_links ul li img {
     width: 20px;
 }
