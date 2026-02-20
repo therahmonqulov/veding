@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: #232323;
+    background-color: #0d1117;
 }
 
 main {
@@ -25,7 +25,7 @@ main {
     margin-top: 0.75rem;
     margin-left: 18%;
     width: 80%;
-    background-color: #232323;
+    background-color: #1f1f1f1f;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
 }
@@ -85,7 +85,7 @@ main {
     padding: 0px 20px;
     margin-top: 0.75rem;
     margin-left: 0.75rem;
-    background-color: #2d2d2d;
+    background-color: #1d232c;
     border-radius: 10px;
 }
 
@@ -147,7 +147,7 @@ main {
     border-radius: 10px;
     padding: 25px 20px 15px 25px;
     margin-bottom: 2.5rem;
-    background: linear-gradient(90deg, #2C3E50, #9a9d9fc0);
+    background: linear-gradient(90deg, #282e37, #2d2c2c);
 }
 
 .hero-content {
@@ -452,4 +452,159 @@ main {
     font-weight: 600;
     font-size: 16px;
     z-index: 2;
+}
+
+/* ─── CARDS WRAPPER ─── */
+.body_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.body_info_promo-card {
+    position: relative;
+    border-radius: 20px;
+    padding: 44px 44px 44px 48px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    transition: transform 0.35s cubic-bezier(.25, .8, .25, 1), box-shadow 0.35s;
+    cursor: pointer;
+    min-height: 190px;
+}
+
+.body_info_promo-card:hover {
+    transform: translateY(-5px) scale(1.012);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Card 1 — Dark navy */
+.toy_docs {
+    background: linear-gradient(135deg, #141c2e 0%, #0f1520 100%);
+}
+
+.toy_docs::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(62, 207, 178, 0.08) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+/* Card 2 — Deep green */
+.marosim_docs {
+    background: linear-gradient(135deg, #0d1f18 0%, #091610 100%);
+}
+
+.marosim_docs::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(201, 168, 76, 0.09) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+/* Decorative icon bg */
+.body_info_icon-bg {
+    position: absolute;
+    right: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 100px;
+    line-height: 1;
+    opacity: 0.07;
+    user-select: none;
+    pointer-events: none;
+    filter: blur(1px);
+    transition: opacity 0.3s;
+}
+
+.body_info_promo-card:hover .body_info_icon-bg {
+    opacity: 0.13;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.card-title {
+    font-family: Montserrat;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #8a8f9e;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+/* Golden accent line left */
+.toy_docs .card-title::before,
+.marosim_docs .card-title::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 3px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+    background: #c9a84c;
+}
+
+.marosim_docs .card-title::before {
+    background: #3ecfb2;
+}
+
+/* Button */
+.promo-btn {
+    font-family: Montserrat;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    padding: 13px 22px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+    letter-spacing: 0.01em;
+}
+
+.toy_docs .promo-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.toy_docs .promo-btn:hover {
+    background: #c9a84c;
+    color: #0f1117;
+    box-shadow: 0 8px 24px rgba(201, 168, 76, 0.35);
+    transform: scale(1.04);
+}
+
+.marosim_docs .promo-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.marosim_docs .promo-btn:hover {
+    background: #3ecfb2;
+    color: #0f1117;
+    box-shadow: 0 8px 24px rgba(62, 207, 178, 0.3);
+    transform: scale(1.04);
 }
