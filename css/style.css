@@ -25,7 +25,6 @@ main {
     margin-top: 0.75rem;
     margin-left: 18%;
     width: 80%;
-    background-color: #1f1f1f1f;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
 }
@@ -302,7 +301,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: 15px;
 }
 
@@ -387,7 +386,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: 15px;
 }
 
