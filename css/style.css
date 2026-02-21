@@ -13,6 +13,7 @@
 }
 
 body {
+    font-family: Montserrat !important;
     background-color: #0d1117;
 }
 
@@ -760,27 +761,11 @@ main {
     letter-spacing: 0.01em;
 }
 
-/* ── ANIMATIONS ── */
-.stats-section {
-    opacity: 0;
-    animation: fadeIn 0.7s 0.1s forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* footer */
 footer {
-    background: #0c0f18;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #151521;
     padding: 60px 52px 0;
 }
 
@@ -790,7 +775,7 @@ footer {
     grid-template-columns: 1.6fr 1fr 1fr 1fr;
     gap: 48px;
     padding-bottom: 52px;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 /* Brand col */
@@ -824,7 +809,7 @@ footer {
     height: 38px;
     border-radius: 10px;
     background: #161b27;
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(255, 255, 255, 0.07);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -859,7 +844,7 @@ footer {
 
 .footer-col ul li a {
     font-size: 13.5px;
-    color: #7a8299;
+    color: #fff;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -891,7 +876,7 @@ footer {
     justify-content: center;
     gap: 32px;
     padding: 28px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     flex-wrap: wrap;
 }
 
@@ -906,7 +891,7 @@ footer {
     height: 40px;
     border-radius: 10px;
     background: #161b27;
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(255, 255, 255, 0.07);
     display: flex;
     align-items: center;
     justify-content: center;
