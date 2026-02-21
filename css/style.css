@@ -71,7 +71,7 @@ main {
 
 .u_name p {
     font-family: Montserrat;
-    font-size: 18px !important;
+    font-size: clamp(0px, 1.3vw, 18px) !important;
 }
 
 .logo {
@@ -92,10 +92,6 @@ main {
 .menu-box p {
     color: #fff;
     font-size: 25px;
-}
-
-.menu-box_links ul li a svg {
-    color: #fff;
 }
 
 .menu-box_links ul {
@@ -122,7 +118,7 @@ main {
     align-items: center;
     gap: 10px;
     padding: 15px 12px;
-    font-size: 14px;
+    font-size: clamp(0px, 0.9vw, 14px);
     letter-spacing: 1px;
     text-decoration: none;
     color: #fff;
@@ -145,7 +141,7 @@ main {
 .header h1 {
     font-family: Montserrat;
     color: white;
-    font-size: 41px;
+    font-size: clamp(0px, 2.5vw, 41px);
     margin-bottom: 10px;
 }
 
@@ -477,16 +473,13 @@ main {
 .body_info_promo-card {
     position: relative;
     border-radius: 20px;
-    padding: 44px 44px 44px 48px;
+    padding: 7%;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 28px;
+    display: grid;
+    gap: 20px;
     border: 1px solid rgba(201, 168, 76, 0.18);
     transition: transform 0.35s cubic-bezier(.25, .8, .25, 1), box-shadow 0.35s;
     cursor: pointer;
-    min-height: 190px;
 }
 
 .body_info_promo-card:hover {
@@ -525,7 +518,7 @@ main {
     position: absolute;
     right: 50px;
     bottom: 0px;
-    font-size: 200px;
+    font-size: clamp(0px, 13vw, 200px);
     line-height: 1;
     opacity: 0.07;
     user-select: none;
@@ -544,9 +537,9 @@ main {
     flex: 1;
 }
 
-.card-title {
+.card-content h2 {
     font-family: Montserrat;
-    font-size: 26px;
+    font-size: clamp(0px, 1.6vw, 26px);
     font-weight: 700;
     line-height: 1.25;
     margin-bottom: 10px;
@@ -554,7 +547,8 @@ main {
 }
 
 .card-subtitle {
-    font-size: 14px;
+    font-family: Montserrat;
+    font-size: clamp(0px, 0.8vw, 14px);
     color: #8a8f9e;
     font-weight: 500;
     line-height: 1.55;
@@ -592,7 +586,9 @@ main {
 }
 
 .toy_docs .promo-btn {
+    width: 50%;
     background: rgba(255, 255, 255, 0.1);
+    font-size: clamp(0px, 1vw, 16px);
     color: #fff;
     backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -606,7 +602,9 @@ main {
 }
 
 .marosim_docs .promo-btn {
+    width: 50%;
     background: rgba(255, 255, 255, 0.08);
+    font-size: clamp(0px, 1vw, 16px);
     color: #fff;
     backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -969,7 +967,13 @@ footer {
 
 
 /* ── RESPONSIVE ── */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+
+    .body_info_promo-card {
+        display: grid;
+        padding: 25px;
+    }
+
     footer {
         padding: 40px 24px 0;
     }
