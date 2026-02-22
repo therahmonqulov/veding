@@ -19,6 +19,8 @@ body {
 
 main {
     display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
 /* body */
@@ -238,12 +240,7 @@ main {
 .categories {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
     padding-bottom: 10px;
-}
-
-.categories::-webkit-scrollbar {
-    height: 8px;
 }
 
 .categories::-webkit-scrollbar-thumb {
@@ -868,51 +865,6 @@ footer {
     background: #c9a84c;
 }
 
-/* ── CONTACT STRIP ── */
-.contact-strip {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    padding: 28px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    flex-wrap: wrap;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.contact-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: #161b27;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 17px;
-    flex-shrink: 0;
-}
-
-.contact-label {
-    font-size: 11px;
-    color: #7a8299;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 2px;
-}
-
-.contact-value {
-    font-size: 13.5px;
-    color: #f0ede6;
-    font-weight: 600;
-}
-
 /* ── BOTTOM ROW ── */
 .footer-bottom {
     display: flex;
@@ -967,6 +919,7 @@ footer {
 
 
 /* ── RESPONSIVE ── */
+
 @media (max-width: 1024px) {
 
     .body_info_promo-card {
@@ -992,7 +945,26 @@ footer {
     }
 }
 
+/* mobile */
 @media (max-width: 560px) {
+    .body {
+        margin: auto;
+        width: 100%;
+    } 
+
+    .body_info {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .menu-box {
+        display: none;
+    }
+
+    .categories {
+        display: -webkit-box;
+        overflow-x: auto;
+    }
+
     .footer-top {
         grid-template-columns: 1fr;
     }
