@@ -26,15 +26,14 @@ main {
 /* body */
 .body {
     margin-top: 0.75rem;
-    margin-left: 18%;
-    width: 80%;
+    margin-left: 250px;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
 }
 
 /* menu */
 .menu {
-    width: 18%;
+    width: 250px;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -63,7 +62,7 @@ main {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #3d1504;
+    background-color: #481905;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -263,7 +262,7 @@ main {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent, #126383cd 80%);
+    background: linear-gradient(180deg, transparent, #000000cc 80%);
     z-index: 1;
 }
 
