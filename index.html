@@ -35,17 +35,11 @@
                                 Xizmarlar</a></li>
                         <li><a href="#"><img src="./astess/img/bulding.png" alt="img" loading="lazy" decoding="async">
                                 Zallar va Binolar</a></li>
-                        <li><a href="#"><img src="./astess/img/add.png" alt="img" loading="lazy" decoding="async"> E'lon
-                                Yaratish</a></li>
+                        <li id="menu-create-li"><a href="#"><img src="./astess/img/add.png" alt="img" loading="lazy"
+                                    decoding="async">
+                                E'lon Yaratish</a>
+                        </li>
                     </ul>
-                </div>
-                <div class="menu_user">
-                    <div class="user">
-                        <div class="u_avatar">F</div>
-                        <div class="u_name">
-                            <p>Foydalanuvchi</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -70,8 +64,10 @@
                             </svg>
                             <input type="text" id="searchInput" placeholder="To'y zali, oshpaz, bezakchi qidiring..">
                         </div>
-                        <button><img src="./astess/img/add.png" alt="img" loading="lazy" decoding="async"> E'lon
-                            Yaratish</button>
+                        <button id="hero-create-btn">
+                            <img src="./astess/img/add.png" alt="img" loading="lazy" decoding="async">
+                            E'lon Yaratish
+                        </button>
                     </div>
 
                     <div class="categories_title">
@@ -295,10 +291,14 @@
                             qiling, narxlarni solishtiring va baxtli kuningizni unutilmas qiling.
                         </p>
                         <div class="socials">
-                            <a class="social-btn" href="#" title="Telegram"><img src="./astess/img/house-chimney.svg" alt="img" width="15" height="15"></a>
-                            <a class="social-btn" href="#" title="Instagram"><img src="./astess/img/bookmark.svg" alt="img" width="15" height="15"></a>
-                            <a class="social-btn" href="#" title="Facebook"><img src="./astess/img/bulding.png" alt="img" width="15" height="15"></a>
-                            <a class="social-btn" href="#" title="YouTube"><img src="./astess/img/service.png" alt="img" width="15" height="15"></a>
+                            <a class="social-btn" href="#" title="Telegram"><img src="./astess/img/house-chimney.svg"
+                                    alt="img" width="15" height="15"></a>
+                            <a class="social-btn" href="#" title="Instagram"><img src="./astess/img/bookmark.svg"
+                                    alt="img" width="15" height="15"></a>
+                            <a class="social-btn" href="#" title="Facebook"><img src="./astess/img/bulding.png"
+                                    alt="img" width="15" height="15"></a>
+                            <a class="social-btn" href="#" title="YouTube"><img src="./astess/img/service.png" alt="img"
+                                    width="15" height="15"></a>
                         </div>
                     </div>
 
@@ -352,9 +352,39 @@
                 </div>
 
             </footer>
-
         </section>
+
     </main>
+
+
+    <section class="auth">
+        <div id="login-modal" class="auth-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Kirish</h2>
+                <form id="login-form">
+                    <input type="email" placeholder="Email manzilingiz" required>
+                    <input type="password" placeholder="Parolingiz" required>
+                    <button type="submit">Kirish</button>
+                </form>
+                <p>Hisobingiz yo'qmi? <a href="#" id="to-register">Ro'yxatdan o'ting</a></p>
+            </div>
+        </div>
+
+        <div id="register-modal" class="auth-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Ro'yxatdan o'tish</h2>
+                <form id="register-form">
+                    <input type="text" name="name" placeholder="Ismingiz" required>
+                    <input type="email" placeholder="Email manzilingiz" required>
+                    <input type="password" placeholder="Parolingiz" required>
+                    <button type="submit">Ro'yxatdan o'tish</button>
+                </form>
+                <p>Allaqachon hisobingiz bormi? <a href="#" id="to-login">Kirish</a></p>
+            </div>
+        </div>
+    </section>
 
     <script src="./js/script.js" defer></script>
 </body>
