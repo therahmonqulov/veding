@@ -363,8 +363,16 @@
                 <span class="close">&times;</span>
                 <h2>Kirish</h2>
                 <form id="login-form">
-                    <input type="email" placeholder="Email manzilingiz" required>
-                    <input type="password" placeholder="Parolingiz" required>
+                    <div class="form_group">
+                        <label for="loginUsername">E-mail:</label>
+                        <input type="email" placeholder="E-mail manzilingiz" id="loginUsername" required>
+                        <span class="error-message" id="loginName_error"></span>
+                    </div>
+                    <div class="form_group">
+                        <label for="loginPassword">Parolingiz:</label>
+                        <input type="password" placeholder="Parolingiz" required>
+                        <span class="error-message" id="loginPassword_error"></span>
+                    </div>
                     <button type="submit">Kirish</button>
                 </form>
                 <p>Hisobingiz yo'qmi? <a href="#" id="to-register">Ro'yxatdan o'ting</a></p>
@@ -376,9 +384,21 @@
                 <span class="close">&times;</span>
                 <h2>Ro'yxatdan o'tish</h2>
                 <form id="register-form">
-                    <input type="text" name="name" placeholder="Ismingiz" required>
-                    <input type="email" placeholder="Email manzilingiz" required>
-                    <input type="password" placeholder="Parolingiz" required>
+                    <div class="form_group">
+                        <label for="regUsername">Ismingiz:</label>
+                        <input type="text" name="name" placeholder="Ismingizni kiriting" id="regUsername" required>
+                        <span class="error-message" id="name_error"></span>
+                    </div>
+                    <div class="form_group">
+                        <label for="regEmail">E-mail:</label>
+                        <input type="email" placeholder="E-mail manzilingiz" id="regEmail" required>
+                        <span class="error-message" id="email_error"></span>
+                    </div>
+                    <div class="form_group">
+                        <label for="regPassword">Parol:</label>
+                        <input type="password" placeholder="Parolingiz" id="regPassword" required>
+                        <span class="error-message" id="password_error"></span>
+                    </div>
                     <button type="submit">Ro'yxatdan o'tish</button>
                 </form>
                 <p>Allaqachon hisobingiz bormi? <a href="#" id="to-login">Kirish</a></p>

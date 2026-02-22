@@ -75,7 +75,7 @@
     padding: 16px 20px;
     border: 1px solid rgba(255,255,255,0.15);
     background: rgba(255,255,255,0.06);
-    border-radius: 14px;
+    border-radius: 5px;
     color: #fff;
     font-size: 16px;
     outline: none;
@@ -121,24 +121,34 @@
     text-decoration: underline;
 }
 
-body {
-    font-family: Montserrat !important;
-    background-color: #0d1117;
-}
-
 body.modal-open {
     overflow: hidden;
     /* ixtiyoriy: agar scrollbar yo'qolishi sababli sahifa siljisa, joyni saqlash uchun */
     padding-right: var(--scrollbar-width, 0px);
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+.form_group {
+    font-family: Montserrat;
+    color: #fff;
+    display: grid;
+    text-align: left;
+}
+
+.form_group label {
+    margin-bottom: 10px;
+}
+
+.error-message {
+    margin-top: 5px;
+    color: #ff0000;
 }
 
 /* body */
+body {
+    font-family: Montserrat !important;
+    background-color: #0d1117;
+}
+
 .body {
     margin-top: 0.75rem;
     margin-left: 250px;
