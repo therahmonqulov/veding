@@ -104,20 +104,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const logged = !!currentUser;
 
         // Hero tugmasi
+        // Hero tugmasi — asosiy o'zgarish shu yerda
         if (heroCreateBtn) {
             if (logged) {
-                heroCreateBtn.innerHTML = `<img src="./astess/img/add.png" alt="img" loading="lazy" decoding="async"> E'lon Yaratish`;
-                heroCreateBtn.onclick = () => alert("E'lon yaratish oynasi tez orada qo'shiladi! 🔥");
+                // Ro'yxatdan o'tgan bo'lsa: user.png + ism
+                const userName = currentUser.name || 'Foydalanuvchi';
+                heroCreateBtn.innerHTML = `
+                <img src="./astess/img/user.png" alt="img" loading="lazy" decoding="async">
+                ${userName}
+            `;
+                heroCreateBtn.onclick = () => {
+                    alert("E'lon yaratish oynasi tez orada qo'shiladi! 🔥");
+                    // yoki keyinroq yangi sahifaga o'tkazish: window.location.href = '/create-announcement.html';
+                };
             } else {
-                heroCreateBtn.innerHTML = `<img src="./astess/img/user-add.png" alt="img" loading="lazy" decoding="async"> Ro'yxatdan o'tish`;
+                // Ro'yxatdan o'tmagan bo'lsa: user-add.png + "Ro'yxatdan o'tish"
+                heroCreateBtn.innerHTML = `
+                <img src="./astess/img/user-add.png" alt="img" loading="lazy" decoding="async">
+                Ro'yxatdan o'tish
+            `;
                 heroCreateBtn.onclick = () => showModal(registerModal);
             }
         }
 
         // E'lon Yaratish tugmalari — har doim ko'rinadi, lekin funksiyasi farq qiladi
         const createHandler = logged
-            ? () => alert("E'lon yaratish oynasi tez orada qo'shiladi! 🔥")   // keyinroq sahifaga o'tkazamiz
-            : () => showModal(registerModal);  // yoki loginModal — xohishingizga qarab
+            ? () => alert("E'lon yaratish oynasi tez orada qo'shiladi! 🔥")
+            : () => showModal(registerModal);
 
         if (menuCreateLi) {
             menuCreateLi.querySelector('a').onclick = (e) => {
