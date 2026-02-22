@@ -58,7 +58,7 @@
 
 .modal-content h2 {
     font-family: Montserrat;
-    color: #c9a84c;
+    color: #fff;
     font-size: 28px;
     margin-bottom: 30px;
 }
@@ -90,7 +90,7 @@
     font-family: Montserrat;
     padding: 16px;
     background: linear-gradient(90deg, #c9a84c, #d4b76a);
-    color: #0d1117;
+    color: #fff;
     border: none;
     border-radius: 14px;
     font-size: 17px;
@@ -124,6 +124,12 @@
 body {
     font-family: Montserrat !important;
     background-color: #0d1117;
+}
+
+body.modal-open {
+    overflow: hidden;
+    /* ixtiyoriy: agar scrollbar yo'qolishi sababli sahifa siljisa, joyni saqlash uchun */
+    padding-right: var(--scrollbar-width, 0px);
 }
 
 main {

@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     type();
 
+
+    // main fayliga
     const token = localStorage.getItem('token');
     let currentUser = null;
     const API_BASE = 'http://localhost:3000/api';
@@ -58,9 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerModal = document.getElementById('register-modal');
     const closeBtns = document.querySelectorAll('.close');
 
-    function showModal(modal) { modal.classList.add('show'); }
-    function hideModal(modal) { modal.classList.remove('show'); }
+    // Modalni ochish
+    function showModal(modal) {
+        modal.classList.add('show');
+        document.body.classList.add('modal-open');  // ← fon scrollini to'xtatish
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
+    }
 
+    // Modalni yopish
+    function hideModal(modal) {
+        modal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+        document.body.style.setProperty('--scrollbar-width', '0px');
+    }
     closeBtns.forEach(btn => btn.addEventListener('click', () => {
         hideModal(loginModal);
         hideModal(registerModal);

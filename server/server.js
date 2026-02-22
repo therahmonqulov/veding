@@ -78,4 +78,4 @@ app.get('/api/me', authMiddleware, async (req, res) => {
 });
 
 const PORT = 3000;
-app.listen(PORT, () => console.log(`🚀 Server http://localhost:${PORT} da ishlamoqda`));
+app.listen(PORT, () => console.log(`Server http://localhost:${PORT} da ishlamoqda`));
