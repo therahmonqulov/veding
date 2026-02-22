@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 2. Email formati (oddiy regex)
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                showError('email_error', 'Email manzili noto‘g‘ri formatda');
+                showError('email_error', 'E-mail manzili noto‘g‘ri formatda');
                 hasError = true;
             }
 
