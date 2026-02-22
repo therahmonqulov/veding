@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('loginPassword').value;
 
             if (!email) {
-                showError('loginName_error', 'Email kiritilishi shart');
+                showError('loginName_error', 'E-mail kiritilishi shart');
                 return;
             }
             if (!password) {
