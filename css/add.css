@@ -142,7 +142,7 @@ input[name="BinoNomi"] {
     padding: 15px;
     outline: none;
     width: 700px;
-    height: 400px;
+    height: 300px;
 }
 
 /* TEXTAREA */
@@ -156,7 +156,6 @@ input[name="BinoNomi"] {
     border-radius: 22px;
     outline: none;
     resize: vertical;
-    min-height: 120px;
     position: relative;
     z-index: 1;
     color: #2d2d2d;
