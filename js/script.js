@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const menuUserButt = document.querySelector('.menu_user');
+
+    menuUserButt.addEventListener('click', function(){
+        window.location.href = './profile.html';
+    })
+
     const texts = [
         "To'y zali qidiring...",
         "Oshpaz va xizmatlarni toping...",
@@ -43,7 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    type();
+    if (input) {
+        type();
+    }
 
 
     // main fayliga
@@ -85,25 +93,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Foydalanuvchini yuklash
-    async function fetchUser() {
-        if (!token) return null;
+    async function loadUserFromToken() {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            currentUser = null;
+            updateUI();
+            return;
+        }
+
         try {
             const res = await fetch(`${API_BASE}/me`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
-            if (res.ok) return await res.json();
-            localStorage.removeItem('token');
-            return null;
+
+            if (res.ok) {
+                currentUser = await res.json();
+                updateUI();
+            } else {
+                console.warn('Token yaroqsiz yoki muddati o‘tgan → o‘chirilmoqda');
+                localStorage.removeItem('token');
+                currentUser = null;
+                updateUI();
+            }
         } catch (err) {
-            console.error(err);
-            return null;
+            console.error('Foydalanuvchi yuklashda xato:', err);
+            localStorage.removeItem('token');
+            currentUser = null;
+            updateUI();
         }
     }
 
     function updateUI() {
         const logged = !!currentUser;
 
-        // menu user block (o'zgarmasdan qoladi)
+        // menu user block
         const menuUserBlock = document.getElementById('menuUserBlock');
         const userAvatarEl = document.getElementById('userAvatar');
         const userNameEl = document.getElementById('userNameDisplay');
@@ -121,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        //  Hero tugmasi
+        // Hero tugmasi (index.html da bo'lsa)
         if (heroCreateBtn) {
             if (logged) {
                 const userName = currentUser.name || 'Foydalanuvchi';
@@ -130,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${userName}
             `;
                 heroCreateBtn.onclick = () => {
-                    window.location.href = '/profile.html';
+                    window.location.href = './profile.html'; // agar profile sahifasi bo'lsa
                 };
             } else {
                 heroCreateBtn.innerHTML = `
@@ -141,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        //  Menyudagi "E'lon Yaratish" havolasi
+        // Menyudagi "E'lon Berish" havolasi
         if (menuCreateLi) {
             const link = menuCreateLi.querySelector('a');
             if (link) {
@@ -149,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
 
                     if (logged) {
-                        window.location.href = '/add.html';
+                        window.location.href = './add.html';
                     } else {
                         showModal(registerModal);
                     }
@@ -163,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const span = document.getElementById(spanId);
         if (span) {
             span.textContent = message;
-            // inputni topib, chegara qo'yish (agar kerak bo'lsa)
             const input = span.previousElementSibling;
             if (input && input.tagName === 'INPUT') {
                 input.classList.add('error-border');
@@ -190,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Real-time tekshiruv (foydalanuvchi yozayotganda xato yo'qolsin)
+    // Real-time tekshiruv
     function attachLiveValidation() {
         // Registratsiya
         const regName = document.getElementById('regUsername');
@@ -203,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Login
         const loginEmail = document.getElementById('loginUsername');
-        const loginPass = document.getElementById('loginPassword');  // ID ni moslashtiring
+        const loginPass = document.getElementById('loginPassword');
 
         if (loginEmail) loginEmail.addEventListener('input', () => clearError('loginName_error'));
         if (loginPass) loginPass.addEventListener('input', () => clearError('loginPassword_error'));
@@ -272,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let hasError = false;
 
-            // 1. Ism uzunligi
             if (name.length === 0) {
                 showError('name_error', 'Ism kiritilishi shart');
                 hasError = true;
@@ -281,14 +302,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 hasError = true;
             }
 
-            // 2. Email formati (oddiy regex)
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 showError('email_error', 'E-mail manzili noto‘g‘ri formatda');
                 hasError = true;
             }
 
-            // 3. Parol uzunligi
             if (password.length < 8) {
                 showError('password_error', 'Parol kamida 8 ta belgi bo‘lishi kerak');
                 hasError = true;
@@ -299,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (hasError) return;
 
-            // Backendga so‘rov
             try {
                 const res = await fetch(`${API_BASE}/register`, {
                     method: 'POST',
@@ -314,9 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentUser = data.user;
                     hideModal(registerModal);
                     updateUI();
-                    // muvaffaqiyatli bo'lsa hammasi tozalanadi
                 } else {
-                    // email allaqachon mavjud
                     if (data.message.includes('allaqachon')) {
                         showError('email_error', 'Bu email ro‘yxatdan o‘tgan');
                     } else {
@@ -333,17 +349,25 @@ document.addEventListener('DOMContentLoaded', () => {
     attachLiveValidation();
 
     // Modal o'tish
-    document.getElementById('to-register').addEventListener('click', e => {
-        e.preventDefault(); hideModal(loginModal); showModal(registerModal);
-    });
-    document.getElementById('to-login').addEventListener('click', e => {
-        e.preventDefault(); hideModal(registerModal); showModal(loginModal);
-    });
+    const toRegisterLink = document.getElementById('to-register');
+    const toLoginLink = document.getElementById('to-login');
 
-    // Boshlash
-    async function init() {
-        if (token) currentUser = await fetchUser();
-        updateUI();
+    if (toRegisterLink) {
+        toRegisterLink.addEventListener('click', e => {
+            e.preventDefault();
+            hideModal(loginModal);
+            showModal(registerModal);
+        });
     }
-    init();
+
+    if (toLoginLink) {
+        toLoginLink.addEventListener('click', e => {
+            e.preventDefault();
+            hideModal(registerModal);
+            showModal(loginModal);
+        });
+    }
+
+    // Boshlash — har safar sahifa yuklanganda tokenni tekshirish
+    loadUserFromToken();
 });

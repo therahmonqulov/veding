@@ -27,7 +27,7 @@
                 </div>
                 <div class="menu-box_links">
                     <ul>
-                        <li><a href="#"><img src="./astess/img/house-chimney.svg" alt="img" loading="lazy"
+                        <li><a href="./index.html"><img src="./astess/img/house-chimney.svg" alt="img" loading="lazy"
                                     decoding="async"> Bosh sahifa</a></li>
                         <li><a href="#"><img src="./astess/img/bookmark.svg" alt="img" loading="lazy" decoding="async">
                                 Saqlangan</a></li>
@@ -35,13 +35,13 @@
                                 Zallar va Binolar</a></li>
                         <li id="menu-create-li"><a href="#"><img src="./astess/img/add.png" alt="img" loading="lazy"
                                     decoding="async">
-                                E'lon Yaratish</a>
+                                E'lon Berish</a>
                         </li>
                     </ul>
                 </div>
                 <div class="menu_user" id="menuUserBlock" style="display: none;">
                     <div class="user">
-                        <div class="u_avatar" id="userAvatar">?</div>
+                        <div class="u_avatar" id="userAvatar">F</div>
                         <div class="u_name">
                             <p id="userNameDisplay">Foydalanuvchi</p>
                         </div>
@@ -358,57 +358,56 @@
             </footer>
         </section>
 
+        <!-- auth -->
+        <section class="auth">
+            <div id="login-modal" class="auth-modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Kirish</h2>
+                    <form id="login-form">
+                        <div class="form_group">
+                            <label for="loginUsername">E-mail:</label>
+                            <input type="text" placeholder="E-mail manzilingiz" id="loginUsername">
+                            <span class="error-message" id="loginName_error"></span>
+                        </div>
+                        <div class="form_group">
+                            <label for="loginPassword">Parolingiz:</label>
+                            <input type="password" placeholder="Parolingiz" id="loginPassword">
+                            <span class="error-message" id="loginPassword_error"></span>
+                        </div>
+                        <button type="submit">Kirish</button>
+                    </form>
+                    <p>Hisobingiz yo'qmi? <a href="#" id="to-register">Ro'yxatdan o'ting</a></p>
+                </div>
+            </div>
+
+            <div id="register-modal" class="auth-modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Ro'yxatdan o'tish</h2>
+                    <form id="register-form">
+                        <div class="form_group">
+                            <label for="regUsername">Ismingiz:</label>
+                            <input type="text" name="name" placeholder="Ismingizni kiriting" id="regUsername">
+                            <span class="error-message" id="name_error"></span>
+                        </div>
+                        <div class="form_group">
+                            <label for="regEmail">E-mail:</label>
+                            <input type="text" placeholder="E-mail manzilingiz" id="regEmail">
+                            <span class="error-message" id="email_error"></span>
+                        </div>
+                        <div class="form_group">
+                            <label for="regPassword">Parol:</label>
+                            <input type="password" placeholder="Parolingiz" id="regPassword">
+                            <span class="error-message" id="password_error"></span>
+                        </div>
+                        <button type="submit">Ro'yxatdan o'tish</button>
+                    </form>
+                    <p>Allaqachon hisobingiz bormi? <a href="#" id="to-login">Kirish</a></p>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <!-- auth -->
-    <section class="auth">
-        <div id="login-modal" class="auth-modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Kirish</h2>
-                <form id="login-form">
-                    <div class="form_group">
-                        <label for="loginUsername">E-mail:</label>
-                        <input type="text" placeholder="E-mail manzilingiz" id="loginUsername">
-                        <span class="error-message" id="loginName_error"></span>
-                    </div>
-                    <div class="form_group">
-                        <label for="loginPassword">Parolingiz:</label>
-                        <input type="password" placeholder="Parolingiz" id="loginPassword">
-                        <span class="error-message" id="loginPassword_error"></span>
-                    </div>
-                    <button type="submit">Kirish</button>
-                </form>
-                <p>Hisobingiz yo'qmi? <a href="#" id="to-register">Ro'yxatdan o'ting</a></p>
-            </div>
-        </div>
-
-        <div id="register-modal" class="auth-modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Ro'yxatdan o'tish</h2>
-                <form id="register-form">
-                    <div class="form_group">
-                        <label for="regUsername">Ismingiz:</label>
-                        <input type="text" name="name" placeholder="Ismingizni kiriting" id="regUsername">
-                        <span class="error-message" id="name_error"></span>
-                    </div>
-                    <div class="form_group">
-                        <label for="regEmail">E-mail:</label>
-                        <input type="text" placeholder="E-mail manzilingiz" id="regEmail">
-                        <span class="error-message" id="email_error"></span>
-                    </div>
-                    <div class="form_group">
-                        <label for="regPassword">Parol:</label>
-                        <input type="password" placeholder="Parolingiz" id="regPassword">
-                        <span class="error-message" id="password_error"></span>
-                    </div>
-                    <button type="submit">Ro'yxatdan o'tish</button>
-                </form>
-                <p>Allaqachon hisobingiz bormi? <a href="#" id="to-login">Kirish</a></p>
-            </div>
-        </div>
-    </section>
 
     <script src="./js/script.js" defer></script>
 </body>

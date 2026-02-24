@@ -223,6 +223,7 @@ body {
 }
 
 .menu_user {
+    cursor: pointer;
     font-family: Montserrat;
     padding: 15px 0px;
     position: absolute;
