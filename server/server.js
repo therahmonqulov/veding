@@ -11,10 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: [
-    'https://veding-henna.vercel.app',
     'http://localhost:5500',
     'http://127.0.0.1:5500',
     'http://localhost:3000',   // agar keyinroq frontendni boshqa portga ko'chirsangiz
+    'https://veding-henna.vercel.app'
   ],
   credentials: true
 }));
@@ -78,5 +78,5 @@ app.get('/api/me', authMiddleware, async (req, res) => {
     res.json(user);
 });
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Server http://localhost:${PORT} da ishlamoqda`));
+const PORT = process.env.PORT;
+app.listen(PORT, () => console.log(`Server Port:${PORT} da ishlamoqda`));

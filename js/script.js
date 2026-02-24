@@ -103,21 +103,36 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateUI() {
         const logged = !!currentUser;
 
-        // Hero tugmasi
+        // menu user block (o'zgarmasdan qoladi)
+        const menuUserBlock = document.getElementById('menuUserBlock');
+        const userAvatarEl = document.getElementById('userAvatar');
+        const userNameEl = document.getElementById('userNameDisplay');
+
+        if (menuUserBlock) {
+            if (logged) {
+                const name = currentUser.name || 'Foydalanuvchi';
+                const avatarLetter = name.charAt(0).toUpperCase();
+
+                userAvatarEl.textContent = avatarLetter;
+                userNameEl.textContent = name;
+                menuUserBlock.style.display = 'block';
+            } else {
+                menuUserBlock.style.display = 'none';
+            }
+        }
+
+        //  Hero tugmasi
         if (heroCreateBtn) {
             if (logged) {
-                // Ro'yxatdan o'tgan bo'lsa: user.png + ism
                 const userName = currentUser.name || 'Foydalanuvchi';
                 heroCreateBtn.innerHTML = `
                 <img src="./astess/img/user.png" alt="img" loading="lazy" decoding="async">
                 ${userName}
             `;
                 heroCreateBtn.onclick = () => {
-                    alert("E'lon yaratish oynasi tez orada qo'shiladi! 🔥");
-                    // yoki keyinroq yangi sahifaga o'tkazish: window.location.href = '/create-announcement.html';
+                    window.location.href = '/profile.html';
                 };
             } else {
-                // Ro'yxatdan o'tmagan bo'lsa: user-add.png + "Ro'yxatdan o'tish"
                 heroCreateBtn.innerHTML = `
                 <img src="./astess/img/user-add.png" alt="img" loading="lazy" decoding="async">
                 Ro'yxatdan o'tish
@@ -126,20 +141,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // E'lon Yaratish tugmalari — har doim ko'rinadi, lekin funksiyasi farq qiladi
-        const createHandler = logged
-            ? () => alert("E'lon yaratish oynasi tez orada qo'shiladi! 🔥")
-            : () => showModal(registerModal);
-
+        //  Menyudagi "E'lon Yaratish" havolasi
         if (menuCreateLi) {
-            menuCreateLi.querySelector('a').onclick = (e) => {
-                e.preventDefault();
-                createHandler();
-            };
-        }
+            const link = menuCreateLi.querySelector('a');
+            if (link) {
+                link.onclick = (e) => {
+                    e.preventDefault();
 
-        if (heroCreateBtn) {
-            heroCreateBtn.onclick = createHandler;
+                    if (logged) {
+                        window.location.href = '/add.html';
+                    } else {
+                        showModal(registerModal);
+                    }
+                };
+            }
         }
     }
 
