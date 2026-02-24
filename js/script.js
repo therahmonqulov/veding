@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const logged = !!currentUser;
 
         // Hero tugmasi
-        // Hero tugmasi — asosiy o'zgarish shu yerda
         if (heroCreateBtn) {
             if (logged) {
                 // Ro'yxatdan o'tgan bo'lsa: user.png + ism
