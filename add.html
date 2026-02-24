@@ -12,6 +12,7 @@
 
     <!-- link -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/add.css">
 
     <title>veding.uz</title>
 </head>
@@ -59,7 +60,49 @@
                 <p>Bizning platformamizga e'lon joylashtiring</p>
             </div>
 
-            
+            <div class="add_section">
+                <div class="add_name">
+                    <p class="add_name_text">Bizga e’loningiz haqida gapirib bering</p>
+                    <div class="add_form">
+                        <label for="">Bino nomi kiriting:</label>
+                        <input type="text" placeholder="Masalan: Tabassum" name="BinoNomi">
+                    </div>
+                    <div class="add_form">
+                        <div class="eelon-card">
+                            <div class="rukn-field">
+                                <div class="field-label">
+                                    <p class="required-star">Rukn:</p>
+                                </div>
+                                <select id="ruknSelect" class="simple-dropdown">
+                                    <option value="" disabled selected>Bo‘limni tanlang</option>
+                                    <option value="toyxona">To‘yxona</option>
+                                    <option value="marosim">Marosim zallari</option>
+                                </select>
+
+                                <!-- oddiy tezkor chiplar (dropdown alohida, ular faqat yordamchi) -->
+                                <div class="chip-row">
+                                    <div class="chip" data-rukn="toyxona">To‘yxona</div>
+                                    <div class="chip" data-rukn="marosim">Marosim</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add_tavsif">
+                    <p class="add_name_text">Tavsif</p>
+                    <label for="">O'z marosim binoingizni tariflang:</label>
+                    <div class="textarea-wrapper">
+                        <textarea class="animated-textarea" id="sarlavhaTextarea"
+                            placeholder="Masalan: “Istiqlol” to'yxonasi, 200 o'rinli, konditsioner, milliy taomlar..."
+                            maxlength="900"></textarea>
+                    </div>
+                    <div class="char-row">
+                        <span class="min-warn" id="minWarning">Kamida 16 ta belgi</span>
+                        <span class="badge"><span id="charCount">0</span>/900</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- footer -->
             <footer>
@@ -188,6 +231,7 @@
     </main>
 
     <script src="./js/script.js" defer></script>
+    <script src="./js/add.js" defer></script>
 </body>
 
 </html>

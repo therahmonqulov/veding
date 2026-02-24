@@ -1,0 +1,203 @@
+.add_name {
+    margin: 1rem 0rem;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #151521;
+}
+
+.add_name_text {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+}
+
+.add_form {
+    display: grid;
+}
+
+.add_form label {
+    margin: 25px 0px 10px 0px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #fff;
+}
+
+input[name="BinoNomi"] {
+    width: 700px;
+    font-family: Montserrat;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 15px;
+}
+
+/* RUKN – DROPDOWN alohida, juda oddiy */
+.required-star {
+    margin: 25px 0px 10px 0px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* selectni to'liq oddiy usulda, lekin biroz kattaroq */
+.simple-dropdown {
+    width: 300px;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    background: #fffcf8;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-family: Montserrat;
+    font-weight: 400;
+    color: #2c1f14;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="%2390674a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center;
+    background-size: 1.2rem;
+    cursor: pointer;
+}
+
+.simple-dropdown:focus {
+    border-color: #b78d6a;
+    box-shadow: 0 0 0 3px rgba(183, 141, 106, 0.15);
+    background-color: #ffffff;
+}
+
+/* ixtiyoriy: chip kategoriyalar oddiy va dropdown bilan alohida */
+.chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+}
+
+.chip {
+    background: #f0e3d8;
+    border: 1px solid #d4bbaa;
+    padding: 0.45rem 1.2rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4d3827;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.chip i {
+    color: #946d4b;
+    font-size: 0.85rem;
+}
+
+.chip:hover {
+    background: #e4d2c2;
+    border-color: #b79373;
+}
+
+.chip:active {
+    background: #d2bbaa;
+}
+
+.info-note {
+    background: #f2eae2;
+    padding: 0.5rem 1.4rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    color: #5c4533;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.info-note i {
+    color: #a86f46;
+}
+
+/* add_tavsif */
+.add_tavsif {
+    padding: 25px;
+    margin-bottom: 1.5rem;
+    background-color: #151521;
+    display: grid;
+}
+
+.add_tavsif label {
+    margin: 25px 0px 10px 0px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #fff;
+}
+
+.add_tavsif textarea {
+    resize: none;
+    font-size: 17px;
+    border-radius: 5px;
+    font-family: Montserrat;
+    padding: 15px;
+    outline: none;
+    width: 700px;
+    height: 400px;
+}
+
+/* TEXTAREA */
+.animated-textarea {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+    font-family: Montserrat;
+    background: #ffffff;
+    border: none;
+    border-radius: 22px;
+    outline: none;
+    resize: vertical;
+    min-height: 120px;
+    position: relative;
+    z-index: 1;
+    color: #2d2d2d;
+    line-height: 1.5;
+}
+
+.char-row {
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.8rem 0 0.5rem 0;
+}
+
+.badge {
+    font-family: Montserrat;
+    background: #e7dbcf;
+    padding: 0.4rem 1.2rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #3c2b1b;
+}
+
+.badge i {
+    margin-right: 5px;
+    color: #956e4b;
+}
+
+.min-warn {
+    font-family: Montserrat;
+    font-size: 0.9rem;
+    background: #ffeae1;
+    padding: 0.4rem 1.2rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.2s;
+}
+
+.min-warn.show {
+    opacity: 1;
+}

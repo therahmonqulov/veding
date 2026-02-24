@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // foydalanuvchi ro'yxatdan o'tgan bo'lsa o'zgaradigan UI 
     function updateUI() {
         const logged = !!currentUser;
 
