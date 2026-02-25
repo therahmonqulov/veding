@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hasError = true;
             }
 
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.com$/; // har qanday @ boshlanib .com bilan tugash
             if (!emailRegex.test(email)) {
                 showError('email_error', 'E-mail manzili noto‘g‘ri formatda');
                 hasError = true;
