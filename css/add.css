@@ -243,12 +243,64 @@ input[name="addCost"] {
     gap: 10px;
 }
 
+/* add_socials */
+.add_socials {
+    margin-bottom: 1.5rem;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #131b27;
+}
+
+.social-input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.social-input-grid label {
+    margin-top: 20px !important;
+}
+
+/* Social input field dizayni */
+.social-field {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+}
+
+.social-field .prefix {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 12px 15px;
+    font-size: 14px;
+    font-family: Montserrat;
+    border-right: 1px solid #ced4da;
+    white-space: nowrap;
+}
+
+.social-field input {
+    border: none !important;
+    outline: none !important;
+    padding: 12px 15px !important;
+    width: 100% !important;
+    font-size: 15px !important;
+    border-radius: 0 !important;
+}
+
 /* add_info */
 .add_info {
     margin-bottom: 1.5rem;
     padding: 25px;
     border-radius: 10px;
     background-color: #131b27;
+}
+
+.add_info_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
 }
 
 input[name="addInfo_count"],
@@ -263,12 +315,139 @@ input[name="addInfo_layer"] {
     padding: 15px;
 }
 
+/* Hafta kunlari uchun chiplar */
+.add_work_time {
+    margin: 1rem 0rem;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #131b27;
+}
+
+.days-selector {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.day-chip {
+    background: #1d2736;
+    border: 1px solid #344155;
+    color: #a0a0a0;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: Montserrat;
+    transition: 0.3s;
+}
+
+.day-chip:hover {
+    border-color: #b78d6a;
+}
+
+.day-chip.active {
+    background: #b78d6a;
+    color: #fff;
+    border-color: #b78d6a;
+}
+
+/* Vaqt konteyneri */
+.work-schedule-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.custom-time-input {
+    background-color: #fff;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-family: Montserrat;
+    font-size: 15px;
+    color: #131b27;
+    width: 140px;
+    cursor: pointer;
+}
+
+.time-separator {
+    padding-bottom: 12px;
+    color: #b78d6a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Kecha-yu kunduz switch (Tumbler) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    margin-top: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #344155;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; width: 18px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #b78d6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.add_rules {
+    margin: 1rem 0rem;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #131b27;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+}
+
+.radio-item {
+    margin-top: 0px !important;
+}
+
 /* add_contact */
 .add_contact {
     margin-bottom: 3rem;
     padding: 25px;
     border-radius: 10px;
     background-color: #131b27;
+}
+
+.rules-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 input[name="addContact"] {
@@ -279,4 +458,55 @@ input[name="addContact"] {
     outline: none;
     font-size: 15px;
     padding: 15px;
+}
+
+/* submit */
+/* Verifikatsiya va Planlar uchun */
+.add_verification, .add_plans {
+    margin-bottom: 1.5rem;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #131b27;
+}
+
+/* Plan kartalari dizayni */
+.submit-area {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-submit {
+    background-color: #b78d6a;
+    color: white;
+    padding: 18px 45px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: Montserrat;
+    transition: 0.3s;
+}
+
+.btn-preview {
+    background-color: transparent;
+    color: #fff;
+    padding: 18px 45px;
+    border: 1px solid #344155;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Montserrat;
+}
+
+.btn-submit:hover {
+    background-color: #946d4b;
+    box-shadow: 0 5px 15px rgba(183, 141, 106, 0.4);
 }

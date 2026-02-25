@@ -106,6 +106,119 @@
                     </div>
                 </div>
 
+                <!-- ish-vaqti -->
+                <div class="add_work_time">
+                    <p class="add_name_text">Ish tartibi va bandlik</p>
+
+                    <div class="add_form">
+                        <label>Ish kunlarini belgilang:</label>
+                        <div class="days-selector">
+                            <div class="day-chip">Dush</div>
+                            <div class="day-chip">Sesh</div>
+                            <div class="day-chip">Chor</div>
+                            <div class="day-chip">Pay</div>
+                            <div class="day-chip">Jum</div>
+                            <div class="day-chip active">Shan</div>
+                            <div class="day-chip active">Yak</div>
+                        </div>
+                    </div>
+
+                    <div class="work-schedule-container">
+                        <div class="add_form">
+                            <label>Ochilish vaqti:</label>
+                            <div class="time-input-wrapper">
+                                <input type="time" name="workStart" value="08:00" class="custom-time-input">
+                            </div>
+                        </div>
+
+                        <div class="time-separator">
+                            <span>—</span>
+                        </div>
+
+                        <div class="add_form">
+                            <label>Yopilish vaqti:</label>
+                            <div class="time-input-wrapper">
+                                <input type="time" name="workEnd" value="23:00" class="custom-time-input">
+                            </div>
+                        </div>
+
+                        <div class="add_form">
+                            <label>Kecha-yu kunduz:</label>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- info -->
+                <div class="add_info">
+                    <p class="add_name_text">Qo'shimcha ma'lumotlar</p>
+                    <div class="add_info_grid">
+                        <div class="add_form">
+                            <label for="regionSelect">Hududni tanlang:</label>
+                            <select id="regionSelect" class="simple-dropdown" name="Hudud">
+                                <option value="" disabled selected>Viloyatni tanlang</option>
+                                <option value="toshkent">Toshkent sh.</option>
+                                <option value="toshkent_v">Toshkent vil.</option>
+                                <option value="samarqand">Samarqand</option>
+                                <option value="fargona">Farg'ona</option>
+                                <option value="andijon">Andijon</option>
+                                <option value="namangan">Namangan</option>
+                                <option value="buxoro">Buxoro</option>
+                                <option value="navoiy">Navoiy</option>
+                                <option value="qashqadaryo">Qashqadaryo</option>
+                                <option value="surxondaryo">Surxondaryo</option>
+                                <option value="jizzax">Jizzax</option>
+                                <option value="sirdaryo">Sirdaryo</option>
+                                <option value="xorazm">Xorazm</option>
+                                <option value="qoraqalpogiston">Qoraqalpog'iston</option>
+                            </select>
+                        </div>
+                        <div class="add_form">
+                            <label for="">Odam sig'imi:</label>
+                            <input type="number" name="addInfo_count">
+                        </div>
+                        <div class="add_form">
+                            <label for="">Ummumiy maydon:</label>
+                            <input type="text" name="addInfo_size" placeholder="m&sup2">
+                        </div>
+                        <div class="add_form">
+                            <label for="">Nechi qavat:</label>
+                            <input type="text" name="addInfo_layer">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- rule -->
+                <div class="add_rules">
+                    <p class="add_name_text">Bino ichki qoidalari</p>
+                    <div class="rules-container">
+                        <div class="add_form">
+                            <label>Chekish uchun ruxsat:</label>
+                            <select class="simple-dropdown">
+                                <option value="no">Taqiqlanadi</option>
+                                <option value="only_special">Faqat maxsus joyda</option>
+                                <option value="yes">Ruxsat beriladi</option>
+                            </select>
+                        </div>
+                        <div class="add_form">
+                            <label>Spirtli ichimliklar:</label>
+                            <div class="radio-group">
+                                <label class="radio-item">
+                                    <input type="radio" name="alcohol" value="no">
+                                    <span>Taqiqlanadi</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="alcohol" value="yes">
+                                    <span>Ruxsat beriladi</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- cost -->
                 <div class="add_cost">
                     <div class="add_form">
@@ -119,36 +232,49 @@
                     </div>
                 </div>
 
-                <!-- info -->
-                <div class="add_info">
-                    <p class="add_name_text">Qo'shimcha ma'lumotlar</p>
-                    <div class="add_form">
-                        <label for="">Odam sig'imi:</label>
-                        <input type="number" name="addInfo_count">
-                    </div>
-                    <div class="add_form">
-                        <label for="">Ummumiy maydon:</label>
-                        <input type="text" name="addInfo_size" placeholder="m&sup2">
-                    </div>
-                    <div class="add_form">
-                        <label for="">Nechi qavat:</label>
-                        <input type="text" name="addInfo_layer">
-                    </div>
-                </div>
-
                 <!-- contact -->
                 <div class="add_contact">
                     <p class="add_name_text">Aloqa uchun ma'lumotlar</p>
-                    <div class="add_form">
-                        <label for="">Telefon raqam:</label>
-                        <input type="text" name="addContact" id="" placeholder="+998XX-XXX-XX-XX">
-                    </div>
-                    <div class="add_form">
-                        <label for="">E-mail:</label>
-                        <input type="text" name="addContact" id="" placeholder="">
+                    <div class="social-input-grid">
+                        <div class="add_form">
+                            <label for="">Telefon raqam:</label>
+                            <input type="text" name="addContact" id="" placeholder="+998XX-XXX-XX-XX">
+                        </div>
+                        <div class="add_form">
+                            <label>Instagram</label>
+                            <div class="social-field">
+                                <span class="prefix">instagram.com/</span>
+                                <input type="text" name="instagram" placeholder="username">
+                            </div>
+                        </div>
+                        <div class="add_form">
+                            <label for="">E-mail:</label>
+                            <input type="text" name="addContact" id="" placeholder="">
+                        </div>
+                        <div class="add_form">
+                            <label>Telegram</label>
+                            <div class="social-field">
+                                <span class="prefix">t.me/</span>
+                                <input type="text" name="telegram" placeholder="username">
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- submit -->
+                <div class="submit-area">
+                    <label class="check-container" style="margin-top: 20px;">
+                        <span style="color: #a0a0a0;">Men <a href="#" style="color: #b78d6a;">foydalanish shartlari</a>
+                            va <a href="#" style="color: #b78d6a;">maxfiylik siyosatiga</a> roziman.</span>
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-submit">E'lonni joylashtirish</button>
+                        <button type="button" class="btn-preview">Ko'rib chiqish</button>
+                    </div>
+                </div>
             </div>
 
             <!-- footer -->
