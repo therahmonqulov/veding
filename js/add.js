@@ -43,3 +43,79 @@ function updateCharCounter() {
 
 textarea.addEventListener('input', updateCharCounter);
 updateCharCounter();
+
+// media
+let uploadedImagesCount = 0;
+const MAX_IMAGES = 4;
+
+function handleImageUpload(event) {
+    const files = Array.from(event.target.files);
+    const grid = document.getElementById('photoGrid');
+    const addBtn = document.getElementById('addBtn'); // Endi HTML dagi ID bilan mos
+
+    files.forEach(file => {
+        if (uploadedImagesCount >= MAX_IMAGES) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            // Placeholderni olib tashlash
+            const placeholder = grid.querySelector('.placeholder');
+            if (placeholder) placeholder.remove();
+
+            const div = document.createElement('div');
+            div.className = 'photo-item preview-container';
+
+            // Yuklanganlar soniga qarab "Asosiy"ni aniqlash
+            const isFirst = grid.querySelectorAll('.preview-img').length === 0;
+
+            div.innerHTML = `
+                <img src="${e.target.result}" class="preview-img">
+                <button type="button" class="remove-btn" onclick="removeImage(this)">×</button>
+                ${isFirst ? '<div class="main-label">Asosiy</div>' : ''}
+            `;
+
+            grid.insertBefore(div, addBtn);
+            uploadedImagesCount++;
+
+            if (uploadedImagesCount === MAX_IMAGES) {
+                addBtn.style.display = 'none';
+            }
+        }
+        reader.readAsDataURL(file);
+    });
+    event.target.value = '';
+}
+
+function removeImage(btn) {
+    const grid = document.getElementById('photoGrid');
+    const addBtn = document.getElementById('addBtn');
+
+    btn.parentElement.remove();
+    uploadedImagesCount--;
+
+    // O'chirilgan rasm o'rniga bo'sh katak qo'shish
+    const placeholder = document.createElement('div');
+    placeholder.className = 'photo-item placeholder';
+    grid.appendChild(placeholder);
+
+    if (uploadedImagesCount < MAX_IMAGES) {
+        addBtn.style.display = 'flex';
+    }
+
+    refreshMainLabel();
+}
+
+function refreshMainLabel() {
+    const allPreviews = document.querySelectorAll('.preview-container');
+    allPreviews.forEach((item, index) => {
+        const existingLabel = item.querySelector('.main-label');
+        if (existingLabel) existingLabel.remove();
+
+        if (index === 0) {
+            const label = document.createElement('div');
+            label.className = 'main-label';
+            label.innerText = 'Asosiy';
+            item.appendChild(label);
+        }
+    });
+}

@@ -65,30 +65,74 @@
                 <!-- name -->
                 <div class="add_name">
                     <p class="add_name_text">Bizga e’loningiz haqida gapirib bering</p>
-                    <div class="add_form">
-                        <label for="">Bino nomi kiriting:</label>
-                        <input type="text" placeholder="Masalan: Tabassum" name="BinoNomi">
-                    </div>
-                    <div class="add_form">
-                        <div class="eelon-card">
-                            <div class="rukn-field">
-                                <div class="field-label">
-                                    <p class="required-star">Bino qaysi bazim uchun:</p>
-                                </div>
-                                <select id="ruknSelect" class="simple-dropdown">
-                                    <option value="" disabled selected>Bazim turi</option>
-                                    <option value="toyxona">To‘y</option>
-                                    <option value="marosim">Marosim</option>
-                                </select>
+                    <div class="name_girid">
+                        <div class="add_form">
+                            <label for="">Bino nomi kiriting:</label>
+                            <input type="text" placeholder="Masalan: Tabassum" name="BinoNomi">
+                        </div>
+                        <div class="add_form">
+                            <label for="regionSelect">Hududni tanlang:</label>
+                            <select id="regionSelect" class="simple-dropdown" name="Hudud">
+                                <option value="" disabled selected>Viloyatni tanlang</option>
+                                <option value="toshkent">Toshkent sh.</option>
+                                <option value="toshkent_v">Toshkent vil.</option>
+                                <option value="samarqand">Samarqand</option>
+                                <option value="fargona">Farg'ona</option>
+                                <option value="andijon">Andijon</option>
+                                <option value="namangan">Namangan</option>
+                                <option value="buxoro">Buxoro</option>
+                                <option value="navoiy">Navoiy</option>
+                                <option value="qashqadaryo">Qashqadaryo</option>
+                                <option value="surxondaryo">Surxondaryo</option>
+                                <option value="jizzax">Jizzax</option>
+                                <option value="sirdaryo">Sirdaryo</option>
+                                <option value="xorazm">Xorazm</option>
+                                <option value="qoraqalpogiston">Qoraqalpog'iston</option>
+                            </select>
+                        </div>
+                        <div class="add_form">
+                            <div class="eelon-card">
+                                <div class="rukn-field">
+                                    <div class="field-label">
+                                        <p class="required-star">Bino qaysi bazim uchun:</p>
+                                    </div>
+                                    <select id="ruknSelect" class="simple-dropdown">
+                                        <option value="" disabled selected>Bazim turi</option>
+                                        <option value="toyxona">To‘y</option>
+                                        <option value="marosim">Marosim</option>
+                                    </select>
 
-                                <!-- oddiy tezkor chiplar (dropdown alohida, ular faqat yordamchi) -->
-                                <div class="chip-row">
-                                    <div class="chip" data-rukn="toyxona">To‘yxona</div>
-                                    <div class="chip" data-rukn="marosim">Marosim</div>
+                                    <!-- oddiy tezkor chiplar (dropdown alohida, ular faqat yordamchi) -->
+                                    <div class="chip-row">
+                                        <div class="chip" data-rukn="toyxona">To‘yxona</div>
+                                        <div class="chip" data-rukn="marosim">Marosim</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- media -->
+                <div class="add_media_gallery">
+                    <p class="add_name_text">Rasmlar</p>
+                    <p class="media-hint">Birinchi rasm e’lon muqovasi bo’ladi.</p>
+
+                    <div class="photo-grid" id="photoGrid">
+                        <div class="photo-item add-btn" id="addBtn"
+                            onclick="document.getElementById('fileInput').click()">
+                            <div class="add-content">
+                                <span>Rasm qo'shish</span>
+                            </div>
+                        </div>
+
+                        <div class="photo-item placeholder"></div>
+                        <div class="photo-item placeholder"></div>
+                        <div class="photo-item placeholder"></div>
+                    </div>
+
+                    <input type="file" id="fileInput" multiple accept="image/*" style="display: none;"
+                        onchange="handleImageUpload(event)">
                 </div>
 
                 <!-- tarif -->
@@ -156,26 +200,6 @@
                 <div class="add_info">
                     <p class="add_name_text">Qo'shimcha ma'lumotlar</p>
                     <div class="add_info_grid">
-                        <div class="add_form">
-                            <label for="regionSelect">Hududni tanlang:</label>
-                            <select id="regionSelect" class="simple-dropdown" name="Hudud">
-                                <option value="" disabled selected>Viloyatni tanlang</option>
-                                <option value="toshkent">Toshkent sh.</option>
-                                <option value="toshkent_v">Toshkent vil.</option>
-                                <option value="samarqand">Samarqand</option>
-                                <option value="fargona">Farg'ona</option>
-                                <option value="andijon">Andijon</option>
-                                <option value="namangan">Namangan</option>
-                                <option value="buxoro">Buxoro</option>
-                                <option value="navoiy">Navoiy</option>
-                                <option value="qashqadaryo">Qashqadaryo</option>
-                                <option value="surxondaryo">Surxondaryo</option>
-                                <option value="jizzax">Jizzax</option>
-                                <option value="sirdaryo">Sirdaryo</option>
-                                <option value="xorazm">Xorazm</option>
-                                <option value="qoraqalpogiston">Qoraqalpog'iston</option>
-                            </select>
-                        </div>
                         <div class="add_form">
                             <label for="">Odam sig'imi:</label>
                             <input type="number" name="addInfo_count">
