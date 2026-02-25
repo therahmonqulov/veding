@@ -200,3 +200,83 @@ input[name="BinoNomi"] {
 .min-warn.show {
     opacity: 1;
 }
+
+/* add_cost */
+.add_cost {
+    margin-bottom: 1.5rem;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #131b27;
+}
+
+.add_cost label {
+    margin: 0px 0px 10px 0px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: #fff;
+}
+
+input[name="addCost"] {
+    width: 200px;
+    font-family: Montserrat;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 15px;
+}
+
+.addCost_sum {
+    background-color: #fff;
+    font-weight: 600;
+    width: 100px;
+    font-family: Montserrat;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 15px;
+}
+
+.cost_input {
+    display: flex;
+    gap: 10px;
+}
+
+/* add_info */
+.add_info {
+    margin-bottom: 1.5rem;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #131b27;
+}
+
+input[name="addInfo_count"],
+input[name="addInfo_size"],
+input[name="addInfo_layer"] {
+    width: 300px;
+    font-family: Montserrat;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 15px;
+}
+
+/* add_contact */
+.add_contact {
+    margin-bottom: 3rem;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #131b27;
+}
+
+input[name="addContact"] {
+    width: 300px;
+    font-family: Montserrat;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 15px;
+}
