@@ -32,9 +32,9 @@
                                     decoding="async"> Bosh sahifa</a></li>
                         <li><a href="#"><img src="./astess/img/bookmark.svg" alt="img" loading="lazy" decoding="async">
                                 Saqlangan</a></li>
-                        <li><a href="#"><img src="./astess/img/bulding.png" alt="img" loading="lazy" decoding="async">
+                        <li><a href="./store.html"><img src="./astess/img/bulding.png" alt="img" loading="lazy" decoding="async">
                                 Zallar va Binolar</a></li>
-                        <li id="menu-create-li"><a href="#"><img src="./astess/img/add.png" alt="img" loading="lazy"
+                        <li id="menu-create-li"><a href="./add.html"><img src="./astess/img/add.png" alt="img" loading="lazy"
                                     decoding="async">
                                 E'lon Berish</a>
                         </li>
@@ -162,8 +162,8 @@
                             <div class="day-chip">Chor</div>
                             <div class="day-chip">Pay</div>
                             <div class="day-chip">Jum</div>
-                            <div class="day-chip active">Shan</div>
-                            <div class="day-chip active">Yak</div>
+                            <div class="day-chip">Shan</div>
+                            <div class="day-chip">Yak</div>
                         </div>
                     </div>
 
@@ -288,9 +288,9 @@
                 <!-- submit -->
                 <div class="submit-area">
                     <label class="check-container" style="margin-top: 20px;">
+                        <input type="checkbox" required>
                         <span style="color: #a0a0a0;">Men <a href="#" style="color: #b78d6a;">foydalanish shartlari</a>
                             va <a href="#" style="color: #b78d6a;">maxfiylik siyosatiga</a> roziman.</span>
-                        <input type="checkbox" required>
                         <span class="checkmark"></span>
                     </label>
 
@@ -429,6 +429,14 @@
 
     <script src="./js/script.js" defer></script>
     <script src="./js/add.js" defer></script>
+
+    <!-- ===== SUPABASE INTEGRATSIYASI (mavjud kodlarga tegmaydi) ===== -->
+    <!-- 1. Supabase JS SDK (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- 2. Supabase kalitlari (BU FAYLNI TO'LDIRING!) -->
+    <script src="./js/supabase-config.js"></script>
+    <!-- 3. E'lon yuklash va store.html ga yo'naltirish logikasi -->
+    <script src="./js/add-supabase.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,11 @@
-const sarlavha = document.getElementById('sarlavhaInput');
+// BUG FIX: HTML da 'sarlavhaInput', 'submitBtn', 'toastContainer' yo'q edi
+// Ular mavjud ID larga to'g'irlandi
+const sarlavha = document.getElementById('sarlavhaTextarea'); // to'g'ri ID
 const charSpan = document.getElementById('charCount');
 const warnMin = document.getElementById('minWarning');
 const ruknSelect = document.getElementById('ruknSelect');
-const submit = document.getElementById('submitBtn');
-const toast = document.getElementById('toastContainer');
+const submit = document.querySelector('.btn-submit'); // to'g'ri selector
+const toast = null; // toastContainer HTML da yo'q, add-supabase.js boshqaradi
 const chips = document.querySelectorAll('.chip');
 
 // Chips - dropdown ni tanlash (oddiy select bilan alohida ishlaydi)
@@ -27,7 +29,7 @@ chips.forEach(chip => {
 // textarea
 const textarea = document.getElementById('sarlavhaTextarea');
 const minWarning = document.getElementById('minWarning');
-const exampleHint = document.getElementById('exampleHint');
+const exampleHint = null; // BUG FIX: HTML da bu element yo'q
 
 // Belgilarni hisoblash va validatsiya
 function updateCharCounter() {
@@ -119,3 +121,12 @@ function refreshMainLabel() {
         }
     });
 }
+// ─── Hafta kunlari toggle ─────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function () {
+    const dayChips = document.querySelectorAll('.day-chip');
+    dayChips.forEach(chip => {
+        chip.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    });
+});

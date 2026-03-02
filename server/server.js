@@ -9,11 +9,24 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+// BUG FIX: CORS origin dinamik — har qanday vercel.app subdomen va localhost
 app.use(cors({
-  origin: [
-    'http://127.0.0.1:5500',
-    'https://veding-henna.vercel.app'
-  ],
+  origin: function(origin, callback) {
+    const allowed = [
+      'http://127.0.0.1:5500',
+      'http://localhost:5500',
+      'http://localhost:3000',
+      'https://veding-henna.vercel.app',
+      'https://veding.uz',
+      'https://www.veding.uz'
+    ];
+    // Origin yo'q (masalan, server-to-server) yoki ro'yxatda bor
+    if (!origin || allowed.includes(origin) || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS: ruxsat berilmagan origin: ' + origin));
+    }
+  },
   credentials: true
 }));
 

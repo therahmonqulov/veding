@@ -32,7 +32,7 @@
                                     decoding="async"> Bosh sahifa</a></li>
                         <li><a href="#"><img src="./astess/img/bookmark.svg" alt="img" loading="lazy" decoding="async">
                                 Saqlangan</a></li>
-                        <li><a href="#"><img src="./astess/img/bulding.png" alt="img" loading="lazy" decoding="async">
+                        <li><a href="./store.html"><img src="./astess/img/bulding.png" alt="img" loading="lazy" decoding="async">
                                 Zallar va Binolar</a></li>
                         <li id="menu-create-li"><a href="#"><img src="./astess/img/add.png" alt="img" loading="lazy"
                                     decoding="async">
@@ -149,99 +149,31 @@
 
             </div>
 
-            <!-- toy_box -->
+            <!-- toy_box — Supabase dan dinamik -->
             <div class="toy_box">
                 <div class="toy_title">
                     <p>To'ylar uchun:</p>
-                    <button>Barchasi <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+                    <button onclick="filterElonlar('toyxona')">Barchasi <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg></button>
                 </div>
-                <div class="toy">
-                    <div class="toy_card">
-                        <img src="./astess/img/1.png" alt="img" loading="lazy" decoding="async">
-                        <div class="toy_overlay">Versal</div>
-                    </div>
-
-                    <div class="toy_card">
-                        <img src="./astess/img/2.png" alt="img" loading="lazy" decoding="async">
-                        <div class="toy_overlay">Osiyo</div>
-                    </div>
-
-                    <div class="toy_card">
-                        <img src="./astess/img/3.png" alt="img" loading="lazy" decoding="async">
-                        <div class="toy_overlay">Yakka Saroy</div>
-                    </div>
-
-                    <div class="toy_card">
-                        <img src="./astess/img/4.png" alt="img" loading="lazy" decoding="async">
-                        <div class="toy_overlay">Ashxabod</div>
-                    </div>
-
-                    <div class="toy_card">
-                        <img src="./astess/img/5.png" alt="img" loading="lazy" decoding="async">
-                        <div class="toy_overlay">Sadaf</div>
-                    </div>
-
-                    <div class="toy_card">
-                        <img src="./astess/img/6.png" alt="img" loading="lazy" decoding="async">
-                        <div class="toy_overlay">Tabbasum</div>
-                    </div>
-
-                    <div class="toy_card">
-                        <img src="./astess/img/8.png" alt="img" loading="lazy" decoding="async">
-                        <div class="toy_overlay">Toj Mahal</div>
-                    </div>
-
+                <div class="toy" id="toyElonlar">
+                    <div class="elon-loading">Yuklanmoqda...</div>
                 </div>
             </div>
 
-            <!-- marosim_box -->
+            <!-- marosim_box — Supabase dan dinamik -->
             <div class="marosim_box">
                 <div class="marosim_title">
                     <p>Marosimlar uchun:</p>
-                    <button>Barchasi <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+                    <button onclick="filterElonlar('marosim')">Barchasi <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg></button>
                 </div>
-                <div class="marosim">
-                    <div class="marosim_card">
-                        <img src="./astess/img/1.png" alt="img" loading="lazy" decoding="async">
-                        <div class="marosim_overlay">Versal</div>
-                    </div>
-
-                    <div class="marosim_card">
-                        <img src="./astess/img/2.png" alt="img" loading="lazy" decoding="async">
-                        <div class="marosim_overlay">Osiyo</div>
-                    </div>
-
-                    <div class="marosim_card">
-                        <img src="./astess/img/3.png" alt="img" loading="lazy" decoding="async">
-                        <div class="marosim_overlay">Yakka Saroy</div>
-                    </div>
-
-                    <div class="marosim_card">
-                        <img src="./astess/img/4.png" alt="img" loading="lazy" decoding="async">
-                        <div class="marosim_overlay">Ashxabod</div>
-                    </div>
-
-                    <div class="marosim_card">
-                        <img src="./astess/img/5.png" alt="img" loading="lazy" decoding="async">
-                        <div class="marosim_overlay">Sadaf</div>
-                    </div>
-
-                    <div class="marosim_card">
-                        <img src="./astess/img/6.png" alt="img" loading="lazy" decoding="async">
-                        <div class="marosim_overlay">Tabbasum</div>
-                    </div>
-
-                    <div class="marosim_card">
-                        <img src="./astess/img/8.png" alt="img" loading="lazy" decoding="async">
-                        <div class="marosim_overlay">Toj Mahal</div>
-                    </div>
-
+                <div class="marosim" id="marosimElonlar">
+                    <div class="elon-loading">Yuklanmoqda...</div>
                 </div>
             </div>
 
@@ -414,6 +346,9 @@
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./js/supabase-config.js"></script>
+    <script src="./js/index-elonlar.js" defer></script>
     <script src="./js/script.js" defer></script>
 </body>
 

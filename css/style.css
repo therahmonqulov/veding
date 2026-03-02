@@ -1105,3 +1105,35 @@ footer {
         gap: 12px;
     }
 }
+/* ─── E'lon kartochkalari overlay ─────────────────────────────────── */
+.toy_overlay, .marosim_overlay {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.elon-card-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    font-family: Montserrat;
+}
+
+.elon-card-price {
+    font-size: 13px;
+    color: #f0d9a8;
+    font-family: Montserrat;
+}
+
+.elon-card-date {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    font-family: Montserrat;
+}
+
+.elon-loading {
+    color: #888;
+    font-family: Montserrat;
+    padding: 20px;
+    font-size: 14px;
+}

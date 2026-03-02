@@ -1,0 +1,282 @@
+/* ===== profile.css ===== */
+
+.profile-wrapper {
+    padding: 24px 0 60px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #1d232c;
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.profile-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b78d6a, #c9a84c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+    font-family: Montserrat;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h1 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 5px;
+    font-family: Montserrat;
+}
+
+.profile-email {
+    font-size: 0.9rem;
+    color: #7a8299;
+    font-family: Montserrat;
+}
+
+.btn-logout {
+    background: transparent;
+    border: 1px solid #344155;
+    color: #e05c5c;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 14px;
+    transition: 0.2s;
+    margin-left: auto;
+}
+
+.btn-logout:hover {
+    background: #e05c5c22;
+    border-color: #e05c5c;
+}
+
+/* Login required */
+.profile-login-required {
+    text-align: center;
+    padding: 60px 20px;
+    background: #1d232c;
+    border-radius: 16px;
+    margin-bottom: 28px;
+}
+
+.login-req-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.profile-login-required h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-family: Montserrat;
+}
+
+.profile-login-required p {
+    color: #7a8299;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    font-family: Montserrat;
+}
+
+.btn-go-login {
+    background: #b78d6a;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: Montserrat;
+    transition: 0.2s;
+}
+
+.btn-go-login:hover {
+    background: #9e7155;
+}
+
+/* Profile section */
+.profile-section {
+    background: #1d232c;
+    border-radius: 16px;
+    padding: 28px 30px;
+}
+
+.profile-section h2 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    font-family: Montserrat;
+}
+
+.profile-section-sub {
+    color: #7a8299;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    font-family: Montserrat;
+}
+
+.no-elonlar {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.no-elonlar span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.no-elonlar p {
+    color: #7a8299;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    font-family: Montserrat;
+}
+
+.btn-add-elon {
+    display: inline-block;
+    background: #b78d6a;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn-add-elon:hover {
+    background: #9e7155;
+}
+
+/* ─── Profile E'lon Kartochkalar ──────────────────────────────────── */
+.profile-elon-card {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 16px;
+    align-items: center;
+    background: #161c27;
+    border: 1px solid #2a3347;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+}
+
+.profile-elon-card:hover {
+    border-color: #b78d6a;
+}
+
+.pec-img {
+    position: relative;
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.pec-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pec-type {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: #b78d6a;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-family: Montserrat;
+    font-weight: 600;
+}
+
+.pec-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pec-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    font-family: Montserrat;
+    margin: 0;
+}
+
+.pec-region, .pec-price, .pec-date {
+    font-size: 0.82rem;
+    color: #7a8299;
+    font-family: Montserrat;
+    margin: 0;
+}
+
+.pec-price {
+    color: #c9a84c;
+}
+
+.pec-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pec-btn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: Montserrat;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.pec-btn-view {
+    background: #b78d6a;
+    color: #fff;
+}
+
+.pec-btn-view:hover {
+    background: #9e7155;
+}
+
+.elon-loading {
+    color: #888;
+    font-family: Montserrat;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+    .profile-elon-card {
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: auto auto;
+    }
+    .pec-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+    }
+}

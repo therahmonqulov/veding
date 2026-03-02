@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuUserButt = document.querySelector('.menu_user');
 
-    menuUserButt.addEventListener('click', function(){
+    if(menuUserButt) menuUserButt.addEventListener('click', function(){
         window.location.href = './profile.html';
     })
 
@@ -57,7 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // main fayliga
     const token = localStorage.getItem('token');
     let currentUser = null;
-    const API_BASE = 'http://localhost:3000/api';
+    // BUG FIX: localhost production da ishlamaydi, dinamik URL
+    const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+        ? 'http://localhost:3000/api'
+        : 'https://veding-server.vercel.app/api';
 
     // Elementlar
     const menuCreateLi = document.getElementById('menu-create-li');
